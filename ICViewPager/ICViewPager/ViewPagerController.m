@@ -995,6 +995,9 @@
         
         [self.tabsView scrollRectToVisible:frame animated:NO];
     }
+    
+#warning Calabash - uncomment this when testing scrollViewDidScroll delegate call
+    //[self.view setBackgroundColor:[self randomColor]];
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     if ([self.actualDelegate respondsToSelector:@selector(scrollViewWillBeginDragging:)]) {
@@ -1031,6 +1034,9 @@
     if ([self.actualDelegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)]) {
         [self.actualDelegate scrollViewDidEndDecelerating:scrollView];
     }
+    
+#warning Calabash - uncomment this when testing scrollViewDidEndDecelerating delegate call
+    //[self.view setBackgroundColor:[self randomColor]];
 }
 
 #pragma mark - UIScrollViewDelegate, Managing Zooming
@@ -1061,6 +1067,14 @@
     if ([self.actualDelegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)]) {
         [self.actualDelegate scrollViewDidEndScrollingAnimation:scrollView];
     }
+}
+
+#pragma mark - For Calabash UIScrollViewDelegate demo
+- (UIColor *)randomColor {
+    CGFloat hue = ( arc4random() % 256 / 256.0 );  //  0.0 to 1.0
+    CGFloat saturation = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    CGFloat brightness = ( arc4random() % 128 / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+    return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
 @end
