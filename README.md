@@ -24,8 +24,10 @@ Uncomment below line in scrollViewDidScroll method
 //[self.view setBackgroundColor:[self randomColor]];
 ```
 
-1. Launch the app and test scroll behaviour manually
-2. Launch the app from Calabash console and test scroll behaviour using Calabash scroll commands
+Build and launch the app from Calabash console
+
+1. Test scroll behaviour manually
+2. Test scroll behaviour using Calabash scroll commands
 
 ==> You should see that delegate method gets called in both cases
 
@@ -37,7 +39,9 @@ Uncomment below line in scrollViewDidEndDecelerating method
 //[self.view setBackgroundColor:[self randomColor]];
 ```
 
-1. Launch the app and test scroll behaviour manually
-2. Launch the app from Calabash console and test scroll behaviour using Calabash scroll commands
+Build and launch the app from Calabash console
+
+1. Test scroll behaviour manually
+2. Test scroll behaviour using Calabash scroll commands
 
 ==> You should see that delegate method does not get called in case 2
